@@ -1,16 +1,18 @@
 results = [];
+document.write("<h1>Simple Calculator</h1>");
+document.write("<p>Calculation History:</p>");
 document.write("<table>");
 document.write("<tr><th>Number 1</th><th>Operator</th><th>Number2</th><th>Result</th></tr>");
 while (true) {
     var x = prompt("Enter first value:");
     if (x !== null) { x = x.trim(); }
     if (x === "") { x = null; } // Takes whitespace off input and sets empty strings to null
-    var y = prompt("Enter second value:");
-    if (y !== null) { y = y.trim(); }
-    if (y === "") { y = null; } // For this number too
     var operator = prompt("Enter operator (+, -, *, /, %):");
     if (operator !== null) { operator = operator.trim(); }
     if (operator === "") { operator = null; } // And for the whitespace too you guessed it
+    var y = prompt("Enter second value:");
+    if (y !== null) { y = y.trim(); }
+    if (y === "") { y = null; } // For this number too
     if (x === null || y === null) { // Cancelled numerical input
         alert("Operation cancelled. Missing input for x or y.");
         document.write("<tr><td>" + (x === null ? "null" : x) + "</td><td>" + operator + "</td><td>" + (y === null ? "null" : y) + "</td><td>Operation cancelled</td></tr>");
@@ -76,7 +78,7 @@ while (true) {
 }
 document.write("</table>");
 
-document.write("<br><br>Summary of results:<br><br>");
+document.write("<br><br><p>Summary of results:</p><br><br>");
 document.write("<table>");
 document.write("<tr><th>Minimum</th><th>Maximum</th><th>Average</th><th>Total</th></tr>");
 let min = results.length > 0 ? Math.min(...results) : "N/A";
