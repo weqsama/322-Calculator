@@ -75,3 +75,12 @@ while (true) {
     }
 }
 document.write("</table>");
+
+document.write("<table>");
+document.write("<tr><th>Minimum</th><th>Maximum</th><th>Average</th><th>Total</th></tr>");
+let min = results.length > 0 ? Math.min(...results) : "N/A";
+let max = results.length > 0 ? Math.max(...results) : "N/A";
+let total = results.length > 0 ? results.reduce((a, b) => a + b, 0) : "N/A";
+let avg = results.length > 0 ? (total / results.length).toFixed(2) : "N/A";
+document.write("<tr><td>" + min + "</td><td>" + max + "</td><td>" + avg + "</td><td>" + total + "</td></tr>");
+document.write("</table>");
