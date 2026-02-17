@@ -76,6 +76,7 @@ while (true) {
 }
 document.write("</table>");
 
+document.write("<br><br>Summary of results:<br><br>");
 document.write("<table>");
 document.write("<tr><th>Minimum</th><th>Maximum</th><th>Average</th><th>Total</th></tr>");
 let min = results.length > 0 ? Math.min(...results) : "N/A";
