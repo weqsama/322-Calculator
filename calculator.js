@@ -15,7 +15,7 @@ while (true) {
     var y = prompt("Enter second value:");
     if (y === null) { // Cancelled input
         alert("Operation cancelled. Missing input for y.");
-        document.write("<tr><td>" + (x === null ? "null" : x) + "</td><td>" + (operator === null ? "null" : operator) + "</td><td>null</td><td>Operation cancelled</td></tr>");
+        document.write("<tr><td>" + (x === null ? "null" : x) + "</td><td>null</td><td>null</td><td>Operation cancelled</td></tr>");
         break;
     }
     y = y.trim();    
