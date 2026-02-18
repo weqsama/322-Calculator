@@ -28,17 +28,17 @@ while (true) {
     }
     y = y.trim();    
     if (y === "") { y = null; } // For this number too
-    if (x === null || y === null) { // Missing numerical input (cancel)
+    if (x === null || y === null) { // Cancelled numerical input
         alert("Operation cancelled. Missing input for x or y.");
         document.write("<tr><td>" + (x === null ? "null" : x) + "</td><td>" + operator + "</td><td>" + (y === null ? "null" : y) + "</td><td>Operation cancelled</td></tr>");
         break;
     }
-    else if (isNaN(x) || isNaN(y)) { // If they aren't numbers you can't do math with them (continue)
+    else if (isNaN(x) || isNaN(y)) { // If they aren't numbers you can't do math with them
         alert("Invalid input. Please enter numeric values for x and y.");
         document.write("<tr><td>" + x + "</td><td>" + operator + "</td><td>" + y + "</td><td>Invalid input</td></tr>");
         continue;
     }
-    else if (operator === null) { // Cancelled operator input (cancel)
+    else if (operator === null) { // Cancelled operator input
         alert("Operation cancelled. Missing input for operator.");
         document.write("<tr><td>" + x + "</td><td>null</td><td>" + y + "</td><td>Operation cancelled</td></tr>");
         break;
@@ -64,7 +64,7 @@ while (true) {
                 results.push(value);
                 break;
             case "/": // Division
-                if (Number(y) === 0) { // Div by 0, continue
+                if (Number(y) === 0) {
                     alert("Error: Division by zero is not allowed.");
                     document.write("<tr><td>" + x + "</td><td>" + operator + "</td><td>" + y + "</td><td>Error: Division by zero</td></tr>");
                 } else {
@@ -75,7 +75,7 @@ while (true) {
                 }
                 break;
             case "%": // Modulo
-                if (Number(y) === 0) { // Mod by 0, continue
+                if (Number(y) === 0) {
                     alert("Error: Modulo by zero is not allowed.");
                     document.write("<tr><td>" + x + "</td><td>" + operator + "</td><td>" + y + "</td><td>Error: Modulo by zero</td></tr>");
                 } else { 
@@ -91,7 +91,6 @@ while (true) {
         }
     }
 }
-// Writing summary table
 document.write("</table>");
 document.write("<br>");
 document.write("<p>Summary of results:</p>");
