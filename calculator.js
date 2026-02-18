@@ -1,4 +1,4 @@
-results = [];
+const results = [];
 document.write("<h1>Simple Calculator</h1>");
 document.write("<p>Calculation History:</p>");
 document.write("<table>");
@@ -12,14 +12,6 @@ while (true) {
     }
     x = x.trim();
     if (x === "") { x = null; } // Takes whitespace off input and sets empty strings to null
-    var operator = prompt("Enter operator (+, -, *, /, %):");
-    if (operator === null) { // Cancelled input
-        alert("Operation cancelled. Missing input for operator.");
-        document.write("<tr><td>" + (x === null ? "null" : x) + "</td><td>null</td><td>" + (y === null ? "null" : y) + "</td><td>Operation cancelled</td></tr>");
-        break;
-    }
-    operator = operator.trim();
-    if (operator === "") { operator = null; } // And for the whitespace too you guessed it
     var y = prompt("Enter second value:");
     if (y === null) { // Cancelled input
         alert("Operation cancelled. Missing input for y.");
@@ -28,6 +20,14 @@ while (true) {
     }
     y = y.trim();    
     if (y === "") { y = null; } // For this number too
+    var operator = prompt("Enter operator (+, -, *, /, %):");
+    if (operator === null) { // Cancelled input
+        alert("Operation cancelled. Missing input for operator.");
+        document.write("<tr><td>" + (x === null ? "null" : x) + "</td><td>null</td><td>" + (y === null ? "null" : y) + "</td><td>Operation cancelled</td></tr>");
+        break;
+    }
+    operator = operator.trim();
+    if (operator === "") { operator = null; } // And for the whitespace too you guessed it
     if (x === null || y === null) { // Cancelled numerical input
         alert("Operation cancelled. Missing input for x or y.");
         document.write("<tr><td>" + (x === null ? "null" : x) + "</td><td>" + operator + "</td><td>" + (y === null ? "null" : y) + "</td><td>Operation cancelled</td></tr>");
